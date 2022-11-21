@@ -51,9 +51,34 @@ class Triangle{
     }
 }
 
+class Circle{
+    constructor(diameter){
+        this.diameter = diameter;
+    }
+    isCircleParamsRight(){
+        let isValueRight = false;
+        if(Number.isFinite(this.diameter)) isValueRight = true;
+        if(this.diameter > 0) isValueRight = true;
+        else isValueRight = false;
+        return isValueRight;
+    }
+    getPerimeter(){
+        let perimeter = Math.PI*this.diameter;
+        perimeter = Number(perimeter.toFixed(4));
+
+        return perimeter;
+    }
+    getSurface(){
+        let surface = Math.PI*Math.pow((this.diameter/2), 2);
+        surface = Number(surface.toFixed(4));
+
+        return surface;
+    }
+}
 
 
 module.exports = {
     Cube:Cube,
     Triangle:Triangle,
+    Circle:Circle
 }
